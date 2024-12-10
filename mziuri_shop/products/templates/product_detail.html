@@ -1,21 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="row">
-    <div class="col col-4">
-        <img src="https://t3.ftcdn.net/jpg/07/12/88/34/360_F_712883459_pOEsapyzSbW2PQ5fR581kCR7a9ayZiOR.jpg" class="card-img-top" alt="...">
-    </div>
-    <div class="col col-8">
-        <div class="d-flex">
-        <div class="card-body">
-            <div>6570 views</div>
-            <div class="ms5">07/12/2024 16:15</div>
-            </div>
-            <h5 class="card-title">product name</h5>
-            <p class= "fw-bold card-text">120$</p>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                card's content.</p>
-        </div>
-    </div>
-</div>
+<h1>{{ product.name }}</h1>
+<p>{{ product.description }}</p>
+<p>Views: {{ product.views }}</p>
 {% endblock %}
