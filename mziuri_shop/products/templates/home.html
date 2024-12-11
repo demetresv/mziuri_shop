@@ -18,11 +18,11 @@
     </div>
     <div class="col-md-6">
         <label for="category" class="form-label">Category</label>
-        <select id="category" class="form-select">
+        <select id="category" name="catrgoy" class="form-select">
             <option disabled selected>Choose...</option>
-            <option>clothes</option>
-            <option>Electronics</option>
-            <option>Food</option>
+            {%for category in categories%}
+            <option value="{{category_id}}">{{category.name}}</option>
+            {%endfor%}
 
 
         </select>
@@ -44,6 +44,7 @@
                 <img src="https://t3.ftcdn.net/jpg/07/12/88/34/360_F_712883459_pOEsapyzSbW2PQ5fR581kCR7a9ayZiOR.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{product.name}}</h5>
+                    <p class="card-text fw-bold">{{product.price}}</p>
                     <p class="card-text">{{product.description}}</p>
                     <a href="{% url 'product_detail' product.id %}">View Product</a>
                 </div>
