@@ -42,3 +42,14 @@ def home(request):
 def product_detail(request, id):
     product = get_object_or_404(Product, id=id)
     return render(request, 'product_detail.html', {'product': product})
+
+    sort_by = request.GET.get('sort')
+
+    if sort_by:
+        products = products.order_by(sort_by)
+    categories = Category.objects.all()
+
+    return render(request, 'home.html', {'products': products,
+                                         'categories': categories})
+
+
